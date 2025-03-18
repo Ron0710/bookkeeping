@@ -54,28 +54,31 @@ export default function Appointment() {
 
   return (
     <div className="flex flex-col bg-white">
-      <main className="flex-grow flex items-center justify-center p-8">
+      <main className="flex-grow flex items-center justify-center p-6 sm:p-8">
         {/* Centered Container with Full Height */}
-        <div className="container w-[95%] bg-white shadow-2xl rounded-3xl p-12 h-full  flex items-center transition-transform hover:scale-[1.01] duration-300 ease-in-out">
-          <section className="w-full flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="container w-[95%] bg-white shadow-2xl rounded-3xl p-6 sm:p-12 h-full flex items-center transition-transform hover:scale-[1.01] duration-300 ease-in-out">
+          <section className="w-full flex flex-col items-center justify-between gap-8 md:gap-12">
             {/* Title & Description */}
             <div className="w-full">
-              <h1 className="text-5xl font-extrabold text-blue-700 leading-tight text-center">
+              <h1 className="text-3xl sm:text-5xl font-extrabold text-blue-700 leading-tight text-center">
                 Book an Appointment
               </h1>
-              <p className="text-xl text-gray-600 mt-4 text-center">
+              <p className="text-lg sm:text-xl text-gray-600 mt-3 sm:mt-4 text-center">
                 Select a service and fill in your details to schedule an
                 appointment.
               </p>
 
               {/* Appointment Form */}
-              <form onSubmit={handleSubmit} className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Left Column */}
+              <form
+                onSubmit={handleSubmit}
+                className="mt-6 w-full max-w-lg sm:max-w-none"
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {/* Left Column (Stacks on Mobile) */}
                   <div className="space-y-6">
                     {/* Service Selection */}
                     <div>
-                      <label className="block text-lg font-semibold text-gray-700">
+                      <label className="block text-base sm:text-lg font-semibold text-gray-700">
                         Select Service
                       </label>
                       <select
@@ -96,7 +99,7 @@ export default function Appointment() {
 
                     {/* Name */}
                     <div>
-                      <label className="block text-lg font-semibold text-gray-700">
+                      <label className="block text-base sm:text-lg font-semibold text-gray-700">
                         Full Name
                       </label>
                       <input
@@ -112,7 +115,7 @@ export default function Appointment() {
 
                     {/* Email */}
                     <div>
-                      <label className="block text-lg font-semibold text-gray-700">
+                      <label className="block text-base sm:text-lg font-semibold text-gray-700">
                         Email
                       </label>
                       <input
@@ -128,7 +131,7 @@ export default function Appointment() {
 
                     {/* Date */}
                     <div>
-                      <label className="block text-lg font-semibold text-gray-700">
+                      <label className="block text-base sm:text-lg font-semibold text-gray-700">
                         Date
                       </label>
                       <input
@@ -142,11 +145,11 @@ export default function Appointment() {
                     </div>
                   </div>
 
-                  {/* Right Column */}
+                  {/* Right Column (Stacks on Mobile) */}
                   <div className="space-y-6">
                     {/* Address */}
                     <div>
-                      <label className="block text-lg font-semibold text-gray-700">
+                      <label className="block text-base sm:text-lg font-semibold text-gray-700">
                         Address
                       </label>
                       <input
@@ -162,7 +165,7 @@ export default function Appointment() {
 
                     {/* Contact Number */}
                     <div>
-                      <label className="block text-lg font-semibold text-gray-700">
+                      <label className="block text-base sm:text-lg font-semibold text-gray-700">
                         Contact Number
                       </label>
                       <input
@@ -178,7 +181,7 @@ export default function Appointment() {
 
                     {/* Time */}
                     <div>
-                      <label className="block text-lg font-semibold text-gray-700">
+                      <label className="block text-base sm:text-lg font-semibold text-gray-700">
                         Time
                       </label>
                       <input
@@ -193,7 +196,7 @@ export default function Appointment() {
 
                     {/* Status (Default: Pending) */}
                     <div>
-                      <label className="block text-lg font-semibold text-gray-700">
+                      <label className="block text-base sm:text-lg font-semibold text-gray-700">
                         Status
                       </label>
                       <input
@@ -211,7 +214,7 @@ export default function Appointment() {
                 <div className="text-center mt-6">
                   <button
                     type="submit"
-                    className="bg-blue-600 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+                    className="bg-blue-600 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto"
                   >
                     Submit Appointment
                   </button>
